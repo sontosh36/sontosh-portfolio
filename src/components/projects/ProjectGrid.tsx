@@ -22,7 +22,7 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
     <motion.div
       variants={projectGridVariants}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       viewport={{ once: true, amount: 0.15 }}
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
     >

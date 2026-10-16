@@ -55,14 +55,16 @@ const Hero = () => {
           animate="visible"
           className="mb-6"
         >
-          <Image
-            width={140}
-            height={140}
-            loading="eager"
-            src="/7389.png"
-            alt="sontosh picture"
-            className="h-32 w-32 rounded-full object-cover ring-3 ring-purple-400 dark:ring-purple-700 sm:h-36 sm:w-36"
-          />
+          <div className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 shadow-lg shadow-purple-500/20">
+            <Image
+              width={140}
+              height={140}
+              loading="eager"
+              src="/7389.png"
+              alt="sontosh picture"
+              className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36"
+            />
+          </div>
         </motion.div>
 
         {/* name */}

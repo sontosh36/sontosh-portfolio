@@ -8,7 +8,7 @@ export const projects: project[] = [
         technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
         githubLink: 'https://github.com/sontosh36/fund-stack',
         demoLink: 'https://fund-stack-d7266.web.app',
-        image: '/projects/loan-management.png',
+        image: '/loan-management.png',
       },
       {
         id: "task-management-app",
@@ -17,7 +17,7 @@ export const projects: project[] = [
         technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
-        image: '/projects/task-manager.webp',
+        image: '/task-manager.webp',
       },
       {
         id: "Portfolio-website",
@@ -26,7 +26,7 @@ export const projects: project[] = [
         technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
-        image: '/projects/portfolio-website.jpg',
+        image: '/portfolio-website.jpg',
       },
       {
         id: "blog-platform",
@@ -35,7 +35,7 @@ export const projects: project[] = [
         technologies: ['Gatsby', 'GraphQL', 'Contentful'],
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
-        image: '/projects/blog-website.jpeg',
+        image: '/blog-website.jpeg',
       },
       {
         id: "weather-app",
@@ -44,7 +44,7 @@ export const projects: project[] = [
         technologies: ['React', 'OpenWeatherMap API'],
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
-        image: '/projects/weather-app.png',
+        image: '/weather-app.png',
       },
       {
         id: "chat-application",
@@ -53,24 +53,6 @@ export const projects: project[] = [
         technologies: ['React', 'Node.js', 'Socket.io'],
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
-        image: '/projects/chat-app.png',
-      },
-      {
-        id: "recipe-finder",
-        title: 'Recipe Finder',
-        description: 'A recipe search application using the Edamam API.',
-        technologies: ['React', 'Edamam API'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/recipe-finder.png',
-      },
-      {
-        id: "expence-tracker",
-        title: 'Expense Tracker',
-        description: 'A personal finance tracker to manage expenses and income.',
-        technologies: ['React', 'Firebase'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/expense-tracker.webp',
+        image: '/chat-app.png',
       }
   ];
