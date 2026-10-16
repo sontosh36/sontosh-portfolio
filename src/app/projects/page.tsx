@@ -1,5 +1,5 @@
 import { projects } from "@/contents/projects";
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectGrid from "@/components/projects/ProjectGrid";
 
 const ProjectsPage = () => {
   return (
@@ -10,22 +10,12 @@ const ProjectsPage = () => {
         </h1>
 
         <p className="mt-4 text-center text-sm leading-7 text-gray-600 dark:text-gray-400 sm:text-base">
-          Browse my projects, explore the technologies I use,
-          and check out the source code and live demos.
+          Browse my projects, explore the technologies I use, and check out the
+          source code and live demos.
         </p>
       </header>
 
-      {projects.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      ) : (
-        <p className="py-12 text-center text-gray-600 dark:text-gray-400">
-          No projects available yet.
-        </p>
-      )}
+      <ProjectGrid projects={projects}/>
     </main>
   );
 };

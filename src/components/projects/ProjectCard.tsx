@@ -1,7 +1,11 @@
+"use client"
+
 import { project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { projectCardVariants } from "@/utils/animations";
 
 type ProjectCardProps = {
   project: project;
@@ -9,7 +13,11 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-gray-200/50 dark:border-gray-800 dark:bg-gray-900/60 dark:hover:shadow-black/20">
+    <motion.div
+      variants={projectCardVariants}
+       whileHover={{ y: -5 }}
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-gray-200/50 dark:border-gray-800 dark:bg-gray-900/60 dark:hover:shadow-black/20"
+    >
       {/* Full-card details link */}
       <Link
         href={`/projects/${project.id}`}
@@ -88,7 +96,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

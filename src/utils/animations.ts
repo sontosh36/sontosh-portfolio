@@ -1,4 +1,4 @@
-import { Variants} from "framer-motion";
+import { Variants } from "framer-motion";
 
 // hero: parent container control the seqence
 export const heroContainer: Variants = {
@@ -215,6 +215,34 @@ export const skillBadge: Variants = {
     y: 0,
     transition: {
       duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
+// project section variants
+export const projectGridVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+export const projectCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
       ease: "easeOut",
     },
   },

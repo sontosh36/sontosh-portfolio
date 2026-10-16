@@ -5,6 +5,8 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { FiFolder } from "react-icons/fi";
 import ProjectCard from "../projects/ProjectCard";
+import { motion } from "framer-motion";
+import { projectGridVariants } from "@/utils/animations";
 
 const project_Limit = 3;
 
@@ -28,11 +30,17 @@ const FeaturedProjects = () => {
 
       {/* Project Grid */}
       {featuredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-7">
+        <motion.div
+          variants={projectGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-7"
+        >
           {featuredProjects.map((project) => (
-             <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} />
           ))}
-        </div>
+        </motion.div>
       ) : (
         <div className="rounded-2xl border border-dashed border-gray-300 px-6 py-12 text-center dark:border-gray-700">
           <FiFolder
