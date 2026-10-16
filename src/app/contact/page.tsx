@@ -2,7 +2,7 @@
 
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
-import { fadeLeft, fadeUp } from "@/utils/animations";
+import { fadeUp, slideInLeft, viewportOnce } from "@/utils/animations";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -43,17 +43,17 @@ const Contact = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={viewportOnce}
             className="min-w-0"
           >
             <ContactInfo />
           </motion.div>
 
           <motion.div
-            variants={fadeLeft}
+            variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={ viewportOnce}
             className="min-w-0"
           >
             <ContactForm />

@@ -1,18 +1,43 @@
-import { Variants } from "framer-motion";
 
-// hero: parent container control the seqence
-export const heroContainer: Variants = {
+import type { Variants } from "framer-motion";
+
+// SHARED CONFIGURATION
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+const defaultDuration = 0.55;
+// CONTAINER VARIANTS
+// General container: headings, text, images, sections
+export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+// Faster sequence: social icons, badges, buttons
+export const fastStaggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.04,
+    },
+  },
+};
+// Slower sequence: project cards, skill cards, stats
+export const slowStaggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
       delayChildren: 0.1,
     },
   },
 };
-
-// General entrance animation for Hero content
-export const heroItem: Variants = {
+// GENERAL ENTRANCE VARIANTS
+// Fade + move upward
+export const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 24,
@@ -21,40 +46,137 @@ export const heroItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      duration: defaultDuration,
+      ease: smoothEase,
     },
   },
 };
-
-// Profile image: subtle fade and scale
-export const heroImage: Variants = {
+// Simple fade
+export const fadeIn: Variants = {
   hidden: {
     opacity: 0,
-    scale: 0.92,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+// Slide from left
+export const slideInLeft: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -24,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: defaultDuration,
+      ease: smoothEase,
+    },
+  },
+};
+// Slide from right
+export const slideInRight: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 24,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: defaultDuration,
+      ease: smoothEase,
+    },
+  },
+};
+// Fade + subtle scale
+export const scaleIn: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.96,
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.65,
+      duration: 0.6,
+      ease: smoothEase,
+    },
+  },
+};
+// STAGGER CHILD VARIANTS
+// General child: text, headings, paragraphs
+export const staggerItem: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+    },
+  },
+};
+// Cards: projects, skills, stats
+export const cardItem: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: smoothEase,
+    },
+  },
+};
+// Small elements: tags, badges, social icons
+export const badgeItem: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 8,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
       ease: "easeOut",
     },
   },
 };
-
-// Social icons: slightly faster entrance
-export const heroSocials: Variants = {
-  hidden: {},
+// IMAGE VARIANTS
+// Profile images and project visuals
+export const imageReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.96,
+    y: 16,
+  },
   visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
+      duration: 0.7,
+      ease: smoothEase,
     },
   },
 };
-
-export const heroSocialItem: Variants = {
+// BUTTON & INTERACTIVE VARIANTS
+export const buttonReveal: Variants = {
   hidden: {
     opacity: 0,
     y: 12,
@@ -68,188 +190,26 @@ export const heroSocialItem: Variants = {
     },
   },
 };
-
-// CTA buttons
-export const heroButton: Variants = {
+// Social icon entrance
+export const socialItem: Variants = {
   hidden: {
     opacity: 0,
-    y: 14,
+    y: 10,
+    scale: 0.95,
   },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-// ShortAbout: parent entrance and stagger
-export const aboutContainer: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-// Text, heading, paragraphs
-export const aboutItem: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-// Profile image
-export const aboutImage: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.96,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
     scale: 1,
-    y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.35,
       ease: "easeOut",
     },
   },
 };
-
-// Stats cards: one after another
-export const aboutStatsContainer: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-export const aboutStatItem: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 18,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: "easeOut",
-    },
-  },
-};
-
-// Bottom CTA
-export const aboutCTA: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 16,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-// Section heading
-export const skillHeader: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-// Category cards
-export const skillGrid: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-export const skillCard: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-// Individual skill badges
-export const skillBadge: Variants = {
-  hidden: { opacity: 0, y: 8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-};
-
-// project section variants
-export const projectGridVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-export const projectCardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-// contactCTA Variants 
-export const fadeUp: Variants = {
+// SPECIAL-PURPOSE VARIANTS
+// Hero heading or prominent content
+export const heroContent: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -258,74 +218,49 @@ export const fadeUp: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: "easeOut",
+      duration: 0.7,
+      ease: smoothEase,
     },
   },
 };
-
-export const fadeLeft: Variants = {
+// Section heading
+export const sectionHeading: Variants = {
   hidden: {
     opacity: 0,
-    x: 20,
+    y: 18,
   },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: smoothEase,
+    },
+  },
+};
+// Contact CTA content
+export const ctaContent: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: smoothEase,
     },
   },
 };
-export const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.5 },
+// VIEWPORT CONFIGURATION
+// For sections animated on scroll
+export const viewportOnce = {
+  once: true,
+  amount: 0.2,
 };
-export const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
-export const fadeInDown = {
-  initial: { opacity: 0, y: -20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
-export const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-export const cardHover = {
-  whileHover: { scale: 1.02 },
-  transition: { type: "spring", stiffness: 300 },
-};
-export const cardHoverSmall = {
-  whileHover: { scale: 1.02 },
-  transition: { type: "spring", stiffness: 300 },
-};
-export const slideInLeft = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.5 },
-};
-export const slideInRight = {
-  initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.5 },
-};
-export const scaleIn = {
-  initial: { opacity: 0, scale: 0.5 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.5 },
-};
-export const pageTransition = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
-  transition: { duration: 0.5 },
+// For elements that should be more visible first
+export const viewportHalf = {
+  once: true,
+  amount: 0.5,
 };

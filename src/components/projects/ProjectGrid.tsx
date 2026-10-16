@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/projects/ProjectCard";
-import { projectGridVariants } from "@/utils/animations";
+import { slowStaggerContainer } from "@/utils/animations";
 import type { project } from "@/types";
 
 type ProjectGridProps = {
@@ -20,7 +20,7 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
 
   return (
     <motion.div
-      variants={projectGridVariants}
+      variants={slowStaggerContainer}
       initial="hidden"
       animate="visible"
       viewport={{ once: true, amount: 0.15 }}

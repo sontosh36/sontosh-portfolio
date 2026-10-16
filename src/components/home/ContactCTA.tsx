@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FiArrowRight, FiMail, FiMessageCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { fadeLeft, fadeUp } from "@/utils/animations";
+import { fadeUp, slideInLeft } from "@/utils/animations";
 
 const ContactCTA = () => {
   return (
@@ -59,7 +59,7 @@ const ContactCTA = () => {
 
           {/* Availability Card */}
           <motion.div
-            variants={fadeLeft}
+            variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

@@ -15,8 +15,13 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { motion } from "framer-motion";
-
-import { skillGrid, skillCard, skillBadge } from "@/utils/animations";
+import {
+  badgeItem,
+  cardItem,
+  fastStaggerContainer,
+  slowStaggerContainer,
+  viewportOnce,
+} from "@/utils/animations";
 
 const skillCategories = [
   {
@@ -57,10 +62,10 @@ const SkillPreview = () => {
     <section id="skills" className="py-14 md:py-20 max-w-7xl mx-auto px-4">
       {/* Section Header */}
       <motion.div
+        variants={cardItem}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={skillCard}
+        viewport={viewportOnce}
         className="max-w-3xl mx-auto text-center"
       >
         {/* Section Label */}
@@ -85,16 +90,16 @@ const SkillPreview = () => {
 
       {/* Skills Grid */}
       <motion.div
-        variants={skillGrid}
+        variants={slowStaggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={viewportOnce}
         className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-10 md:mt-14"
       >
         {skillCategories.map((category) => (
           <motion.div
             key={category.title}
-            variants={skillCard}
+            variants={cardItem}
             whileHover={{ y: -4 }}
             className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
           >
@@ -110,14 +115,7 @@ const SkillPreview = () => {
 
             {/* Skills */}
             <motion.div
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.05,
-                  },
-                },
-              }}
+              variants={fastStaggerContainer}
               className="flex flex-wrap gap-3"
             >
               {category.skills.map((skill) => {
@@ -125,7 +123,7 @@ const SkillPreview = () => {
 
                 return (
                   <motion.div
-                    variants={skillBadge}
+                    variants={badgeItem}
                     whileHover={{ y: -3, scale: 1.02 }}
                     key={skill.name}
                     className="group/skill flex items-center gap-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3.5 py-2.5 sm:px-4 sm:py-3 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/50 dark:hover:border-purple-500/50 hover:shadow-md hover:shadow-purple-500/10"

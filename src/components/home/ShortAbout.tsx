@@ -5,12 +5,14 @@ import Link from "next/link";
 import AnimatedCounter from "../ui/AnimatedCount";
 import { motion } from "framer-motion";
 import {
-  aboutContainer,
-  aboutItem,
-  aboutImage,
-  aboutStatsContainer,
-  aboutStatItem,
-  aboutCTA,
+  imageReveal,
+  viewportOnce,
+  staggerContainer,
+  staggerItem,
+  fastStaggerContainer,
+  cardItem,
+  ctaContent,
+  viewportHalf,
 } from "@/utils/animations";
 
 const ShortAbout = () => {
@@ -19,10 +21,10 @@ const ShortAbout = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
         {/* image */}
         <motion.div
-          variants={aboutImage}
+          variants={imageReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={viewportOnce}
           className="flex justify-center md:justify-start"
         >
           <div className="relative group">
@@ -59,15 +61,15 @@ const ShortAbout = () => {
 
         {/* Content */}
         <motion.div
-          variants={aboutContainer}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={viewportOnce}
           className="text-center lg:text-left"
         >
           {/* Section Label */}
           <motion.p
-            variants={aboutItem}
+            variants={staggerItem}
             className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary"
           >
             About Me
@@ -75,7 +77,7 @@ const ShortAbout = () => {
 
           {/* Heading */}
           <motion.h2
-            variants={aboutItem}
+            variants={staggerItem}
             className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
           >
             Turning Ideas Into{" "}
@@ -86,7 +88,7 @@ const ShortAbout = () => {
 
           {/* Description */}
           <motion.p
-            variants={aboutItem}
+            variants={staggerItem}
             className="text-base md:text-lg leading-8 text-gray-600 dark:text-gray-300"
           >
             I am a passionate web developer who loves building modern,
@@ -96,7 +98,7 @@ const ShortAbout = () => {
           </motion.p>
 
           <motion.p
-            variants={aboutItem}
+            variants={staggerItem}
             className="mt-4 text-base md:text-lg leading-8 text-gray-600 dark:text-gray-300"
           >
             My focus is on writing clean, maintainable code while creating
@@ -106,15 +108,15 @@ const ShortAbout = () => {
 
           {/* State */}
           <motion.div
-            variants={aboutStatsContainer}
+            variants={fastStaggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={viewportOnce}
             className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8"
           >
             {/* Projects */}
             <motion.div
-              variants={aboutStatItem}
+              variants={cardItem}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
               className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
@@ -129,7 +131,7 @@ const ShortAbout = () => {
 
             {/* Technologies */}
             <motion.div
-              variants={aboutStatItem}
+              variants={cardItem}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
               className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
@@ -144,7 +146,7 @@ const ShortAbout = () => {
 
             {/* problem solved */}
             <motion.div
-              variants={aboutStatItem}
+              variants={cardItem}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
               className="col-span-2 sm:col-span-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
@@ -161,10 +163,10 @@ const ShortAbout = () => {
       </div>
       {/* Bottom CTA */}
       <motion.div
-        variants={aboutCTA}
+        variants={ctaContent}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={viewportHalf}
         className="mt-10 text-center"
       >
         <motion.div

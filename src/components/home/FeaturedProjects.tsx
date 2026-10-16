@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { FiFolder } from "react-icons/fi";
 import ProjectCard from "../projects/ProjectCard";
 import { motion } from "framer-motion";
-import { projectGridVariants } from "@/utils/animations";
+import { slowStaggerContainer, viewportOnce } from "@/utils/animations";
 
 const project_Limit = 3;
 
@@ -31,10 +31,10 @@ const FeaturedProjects = () => {
       {/* Project Grid */}
       {featuredProjects.length > 0 ? (
         <motion.div
-          variants={projectGridVariants}
+          variants={slowStaggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-7"
         >
           {featuredProjects.map((project) => (

@@ -12,6 +12,12 @@ import {
   heroSocials,
   heroSocialItem,
   heroButton,
+  staggerContainer,
+  imageReveal,
+  staggerItem,
+  fastStaggerContainer,
+  socialItem,
+  buttonReveal,
 } from "@/utils/animations";
 
 const socials = [
@@ -43,14 +49,14 @@ const Hero = () => {
         <div className="absolute right-0 top-1/3 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl" />
       </div>
       <motion.div
-        variants={heroContainer}
+        variants={staggerContainer}
         initial="hidden"
         animate="visible"
         className="mx-auto flex max-w-3xl flex-col items-center text-center"
       >
         {/* profile image */}
         <motion.div
-          variants={heroImage}
+          variants={imageReveal}
           initial="hidden"
           animate="visible"
           className="mb-6"
@@ -69,7 +75,7 @@ const Hero = () => {
 
         {/* name */}
         <motion.h1
-          variants={heroItem}
+          variants={staggerItem}
           className="mb-5 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl"
         >
           Hi, I&apos;m{" "}
@@ -79,7 +85,7 @@ const Hero = () => {
         </motion.h1>
         {/* role typewriter */}
         <motion.div
-          variants={heroItem}
+          variants={staggerItem}
           className="mb-6 min-h-9 text-xl font-medium text-gray-600 dark:text-gray-300 sm:text-2xl"
         >
           <Typewriter
@@ -100,7 +106,7 @@ const Hero = () => {
 
         {/* Intro */}
         <motion.p
-          variants={heroItem}
+          variants={staggerItem}
           className="mb-8 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-400 sm:text-lg"
         >
           I build responsive, user-friendly web applications with modern
@@ -110,13 +116,13 @@ const Hero = () => {
 
         {/* socials */}
         <motion.div
-          variants={heroSocials}
+          variants={fastStaggerContainer}
           className="mb-8 flex items-center justify-center gap-5"
         >
           {socials.map(({ label, href, icon: Icon }) => (
             <motion.div
               key={label}
-              variants={heroSocialItem}
+              variants={socialItem}
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
             >
@@ -135,11 +141,11 @@ const Hero = () => {
 
         {/* CTA Button */}
         <motion.div
-          variants={heroItem}
+          variants={staggerItem}
           className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row"
         >
           <motion.div
-            variants={heroButton}
+            variants={buttonReveal}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -152,7 +158,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            variants={heroButton}
+            variants={buttonReveal}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
