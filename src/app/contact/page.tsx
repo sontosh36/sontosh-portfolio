@@ -1,6 +1,9 @@
+"use client";
 
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
+import { fadeLeft, fadeUp } from "@/utils/animations";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -13,7 +16,12 @@ const Contact = () => {
 
       <div className="mx-auto max-w-7xl">
         {/* Section heading */}
-        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mx-auto mb-12 max-w-2xl text-center md:mb-16"
+        >
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold tracking-wider text-primary">
             LET&apos;S CONNECT
           </span>
@@ -24,20 +32,32 @@ const Contact = () => {
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-600 sm:text-base dark:text-gray-400">
-            I&apos;m always open to discussing new projects, creative
-            ideas, and opportunities to collaborate. Feel free to reach out!
+            I&apos;m always open to discussing new projects, creative ideas, and
+            opportunities to collaborate. Feel free to reach out!
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact content */}
         <div className="grid grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
-          <div className="min-w-0">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="min-w-0"
+          >
             <ContactInfo />
-          </div>
+          </motion.div>
 
-          <div className="min-w-0">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="min-w-0"
+          >
             <ContactForm />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

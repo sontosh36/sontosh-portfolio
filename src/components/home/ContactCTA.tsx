@@ -1,21 +1,30 @@
+"use client"
 import Link from "next/link";
 import { FiArrowRight, FiMail, FiMessageCircle } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { fadeLeft, fadeUp } from "@/utils/animations";
 
 const ContactCTA = () => {
   return (
     <section className="px-4 py-14 md:py-20 mx-auto max-w-7xl">
-      <div className=" relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-6 py-12 sm:px-10 md:px-16 md:py-16">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className=" relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-6 py-12 sm:px-10 md:px-16 md:py-16"
+      >
         {/* Decorative blur */}
         <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
 
-        <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-primary/30 blur-3xl"/>
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
 
         <div className="relative z-10 grid items-center gap-10 md:grid-cols-[1fr_auto]">
           {/* Content */}
           <div className="max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-300">
               <FiMessageCircle className="h-4 w-4 text-primary" />
-              <span>Let's work together</span>
+              <span>Let&apos;s work together</span>
             </div>
 
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl md:text-5xl">
@@ -49,7 +58,13 @@ const ContactCTA = () => {
           </div>
 
           {/* Availability Card */}
-          <div className="w-full rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm md:w-64">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="w-full rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm md:w-64"
+          >
             <div className="flex items-center gap-3">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -65,9 +80,9 @@ const ContactCTA = () => {
               Open to frontend development roles, internships, and meaningful
               collaborations.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
