@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { FiArrowRight, FiMail, FiMessageCircle } from "react-icons/fi";
 import { motion } from "framer-motion";

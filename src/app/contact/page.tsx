@@ -53,7 +53,7 @@ const Contact = () => {
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={ viewportOnce}
+            viewport={viewportOnce}
             className="min-w-0"
           >
             <ContactForm />

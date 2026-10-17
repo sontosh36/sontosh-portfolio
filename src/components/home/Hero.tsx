@@ -6,12 +6,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import {
-  heroContainer,
-  heroItem,
-  heroImage,
-  heroSocials,
-  heroSocialItem,
-  heroButton,
   staggerContainer,
   imageReveal,
   staggerItem,

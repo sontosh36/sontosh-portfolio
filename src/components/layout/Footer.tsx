@@ -20,13 +20,11 @@ const Footer = () => {
               className="group flex items-center text-xl font-bold tracking-tight"
               aria-label="Go to homepage"
             >
-              <span className="text-primary transition-colors duration-200 group-hover:opacity-90">
-                Sontosh
+              <p className="text-primary transition-colors duration-200 group-hover:opacity-90">
+                Sontosh<span className="font-extrabold text-pink-500 transition-transform duration-200 group-hover:scale-110">
+                .io
               </span>
-
-              <span className="ml-1 font-extrabold text-pink-500 transition-transform duration-200 group-hover:scale-110">
-                K.
-              </span>
+              </p>
             </Link>
 
             <p className="mt-4 text-sm leading-6 text-zinc-500 dark:text-zinc-400">
