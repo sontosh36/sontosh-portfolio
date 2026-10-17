@@ -1,6 +1,22 @@
 import { projects } from "@/contents/projects";
 import ProjectGrid from "@/components/projects/ProjectGrid";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore my web development projects, discover the technologies I use, and view source code, live demos, and project details.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects | Sontosh Kumar Sarker",
+    description:
+      "Explore my portfolio projects, technical implementations, tools, and technologies, with links to source code and live demos.",
+    url: "/projects",
+    type: "website",
+  },
+};
 const ProjectsPage = () => {
   return (
     <main className="mx-auto min-h-screen max-w-7xl px-4 py-16 sm:px-6 md:py-20 lg:px-8">

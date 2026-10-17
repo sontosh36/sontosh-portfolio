@@ -6,25 +6,62 @@ import { ThemeProvider } from "../context/ThemeContext";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
-  weight: ["100", "200", "300", "400", "700", "900"],
   subsets: ["latin"],
+  weight: [ "400", "500", "600", "700","800", "900"],
+   display: "swap",
 });
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
-    default: "Sontosh Kumar Sarker",
+    default: "Sontosh Kumar Sarker | MERN Stack Developer",
     template: "%s | Sontosh Kumar Sarker",
   },
+
   description:
-    "I'm Sontosh Kumar Sarker, a MERN Stack Developer specializing in React, Next.js and modern web technologies.",
+    "Explore the portfolio of Sontosh Kumar Sarker, a MERN Stack Developer specializing in React, Next.js, Node.js, and modern web application development.",
+
   keywords: [
     "Sontosh Kumar Sarker",
-    "MERN Stack Develper",
-    "NextJS Developer",
-    "Frontend Developer",
+    "MERN Stack Developer",
+    "Next.js Developer",
     "React Developer",
+    "Frontend Developer",
     "JavaScript Developer",
+    "Software Developer Portfolio",
   ],
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Sontosh Kumar Sarker Portfolio",
+    title: "Sontosh Kumar Sarker | MERN Stack Developer",
+    description:
+      "Discover my projects, technical skills, and experience building modern, responsive web applications with React, Next.js, and Node.js.",
+    images: [
+      {
+        url: "/7389.png",
+        width: 1200,
+        height: 630,
+        alt: "Sontosh Kumar Sarker - MERN Stack Developer Portfolio",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
