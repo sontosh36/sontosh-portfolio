@@ -41,7 +41,7 @@ export default function ContactInfo() {
                   {item.title}
                 </h3>
 
-                <p className="mt-1 break-word text-sm text-gray-700 dark:text-gray-300">
+                <p className="mt-1 break-words text-sm text-gray-700 dark:text-gray-300">
                   {item.value}
                 </p>
 

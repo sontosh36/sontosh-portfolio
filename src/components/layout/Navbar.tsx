@@ -67,15 +67,16 @@ const Navbar = () => {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
-              {/* Download CV */}
-              <a
+              {/* Resume view */}
+              <Link
                 href="https://docs.google.com/document/d/1lrzoO_7O0lq8AD8zVwtp45ISJ4NmRzmzrNYsduzhdhE/edit?usp=sharing"
                 download
+                target="_blank"
                 className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg hover:shadow-primary/30 active:translate-y-0"
               >
                 <ArrowDownTrayIcon className="h-4 w-4" />
-                <span>Download CV</span>
-              </a>
+                <span>Resume</span>
+              </Link>
 
               {/* Theme button */}
               <button
@@ -137,15 +138,15 @@ const Navbar = () => {
               );
             })}
 
-            {/* Mobile Download CV button */}
-            <a
-              href="/cv.pdf"
+            {/* Mobile Resume button */}
+            <Link
+              href="/sontosh-resume.pdf"
               download
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-200 hover:bg-blue-700 active:scale-[0.98]"
             >
               <ArrowDownTrayIcon className="h-4 w-4" />
-              Download CV
-            </a>
+              Resume
+            </Link>
           </div>
         </div>
       </div>

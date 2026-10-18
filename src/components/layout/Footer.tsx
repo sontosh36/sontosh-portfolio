@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiArrowUpRight, FiHeart } from "react-icons/fi";
-import { MdOutlineMailOutline } from "react-icons/md";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,9 +19,10 @@ const Footer = () => {
               aria-label="Go to homepage"
             >
               <p className="text-primary transition-colors duration-200 group-hover:opacity-90">
-                Sontosh<span className="font-extrabold text-pink-500 transition-transform duration-200 group-hover:scale-110">
-                .io
-              </span>
+                Sontosh
+                <span className="font-extrabold text-pink-500 transition-transform duration-200 group-hover:scale-110">
+                  .io
+                </span>
               </p>
             </Link>
 
@@ -38,7 +37,7 @@ const Footer = () => {
                 href="https://github.com/sontosh36"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
+                aria-label="Github"
                 className="text-3xl text-gray-600 border-zinc-800 dark:text-gray-300 transition duration-300 hover:text-primary"
               >
                 <FaGithub />
@@ -53,21 +52,15 @@ const Footer = () => {
               >
                 <FaLinkedin />
               </Link>
-
               <Link
-                href="https://github.com/sontosh36"
+                href="https://facebook.com/sontoshkumar.sarker.37"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="text-3xl text-gray-600 border-zinc-800 dark:text-gray-300 transition duration-300 hover:text-primary"
               >
-                <FaXTwitter />
+                <FaFacebook/>
               </Link>
-
-              <a
-                href="mailto:your@email.com"
-                aria-label="Email"
-                className="text-3xl text-gray-600 border-zinc-800 dark:text-gray-300 transition duration-300 hover:text-primary"
-              >
-                <MdOutlineMailOutline />
-              </a>
             </div>
           </div>
 

@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import {
@@ -16,7 +15,7 @@ import {
 
 const socials = [
   {
-    label: "GitHub",
+    label: "Github",
     href: "https://github.com/sontosh36",
     icon: FaGithub,
   },
@@ -26,9 +25,9 @@ const socials = [
     icon: FaLinkedin,
   },
   {
-    label: "X",
-    href: "https://x.com/",
-    icon: FaXTwitter,
+    label: "Facebook",
+    href: "https://facebook.com/sontoshkumar.sarker.37",
+    icon: FaFacebook,
   },
 ];
 const Hero = () => {

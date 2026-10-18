@@ -84,7 +84,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Tools & Workflow",
     description: "Development and collaboration",
     icon: FiCode,
-    skills: ["Git", "GitHub", "VS Code", "npm", "Postman"],
+    skills: ["Git", "Github", "VS Code", "npm", "Postman"],
   },
 ];
 

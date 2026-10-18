@@ -122,7 +122,7 @@ const ShortAbout = () => {
               className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
             >
               <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                <AnimatedCounter end={3} suffix="+" />
+                <AnimatedCounter end={1} suffix="+" />
               </h3>
               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Projects
@@ -137,7 +137,7 @@ const ShortAbout = () => {
               className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
             >
               <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                <AnimatedCounter end={10} suffix="+" />
+                <AnimatedCounter end={15} suffix="+" />
               </h3>
               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Technologies

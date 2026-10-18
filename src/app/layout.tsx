@@ -62,6 +62,10 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  other: {
+    linkedin: "https://linkedin/in/sontoshkumar",
+    github: "https://github.com/sontosh36"
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
