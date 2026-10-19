@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: "https://sontosh-portfolio-five.vercel.app",
     siteName: "Sontosh Kumar Sarker Portfolio",
     title: "Sontosh Kumar Sarker | MERN Stack Developer",
     description:

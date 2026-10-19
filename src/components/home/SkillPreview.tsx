@@ -52,7 +52,7 @@ const skillCategories = [
     title: "Tools & Workflow",
     skills: [
       { name: "Git", icon: SiGit },
-      { name: "GitHub", icon: SiGithub },
+      { name: "Github", icon: SiGithub },
       { name: "Figma", icon: SiFigma },
     ],
   },
